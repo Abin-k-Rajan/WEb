@@ -1,0 +1,38 @@
+{% extends 'block.html' %}
+{% block title %} Feedback
+{% endblock title %}
+{% block body %}
+<div class="container my-2">
+    <h2 class="text-center">Feedback</h2>
+</div>
+<div class="container px=0">
+<form method="post" action="/feedback">
+{% csrf_token %}
+<div class="form-group">
+    <label for="exampleFormControlInput1">Name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="firstname lastname">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Phone Number</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name = "phone" placeholder="phone number">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" name = "email" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1" name = "feed">
+      <option>Feedback</option>
+      <option>Problem</option>
+      <option>Report</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name = "desc" rows="3"></textarea>
+  </div>
+  <button class="btn btn-primary" type="Submit">Submit</button>
+</form>
+</div>
+{% endblock body %}
